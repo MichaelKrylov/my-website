@@ -3,40 +3,333 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Политика конфиденциальности</title>
+    <title>MishaStar - Разработка и технологии</title>
     <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 40px; 
-            background: #f5f5f5; 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .container { 
-            max-width: 800px; 
-            background: white; 
-            padding: 30px; 
-            border-radius: 8px; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
         }
-        nav { margin-bottom: 30px; }
-        nav a { 
-            margin-right: 20px; 
-            text-decoration: none; 
-            color: #0066cc; 
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 20px 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 2em;
             font-weight: bold;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        nav a:hover { color: #004499; }
+
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            border-radius: 25px;
+        }
+
+        .nav a:hover {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 60px 40px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-title {
+            font-size: 3.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 30px auto;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature-title {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .feature-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 50px 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-title {
+            font-size: 2.5em;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-content {
+            font-size: 1.1em;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #667eea;
+        }
+
+        .copyright {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .hero-title {
+                font-size: 2.5em;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1em;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .nav {
+                gap: 15px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container > * {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .container > *:nth-child(2) { animation-delay: 0.1s; }
+        .container > *:nth-child(3) { animation-delay: 0.2s; }
+        .container > *:nth-child(4) { animation-delay: 0.3s; }
+        .container > *:nth-child(5) { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
     <div class="container">
-        <nav>
-            <a href="index.html">🏠 Главная</a>
-            <a href="privacy.html">🔒 Политика конфиденциальности</a>
-        </nav>
-        
-        <h1>Политика конфиденциальности</h1>
-        <p>Здесь размещается информация о том, как обрабатываются персональные данные пользователей.</p>
-        <p>Эта страница обязательна для большинства сайтов.</p>
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">MishaStar</div>
+            <nav class="nav">
+                <a href="index.html">🏠 Главная</a>
+                <a href="privacy.html">🔒 Политика конфиденциальности</a>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="hero-title">MishaStar</h1>
+            <p class="hero-subtitle">Разработка современных веб-приложений и изучение передовых технологий</p>
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" 
+                 alt="MishaStar" class="hero-image" 
+                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjNjY3ZWVhIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iMTEwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSI0MCIgZm9udC1mYW1pbHk9IkFyaWFsIj5NUzwvdGV4dD4KPC9zdmc+'">
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <div class="feature-card">
+                <span class="feature-icon">🐍</span>
+                <h3 class="feature-title">Python разработка</h3>
+                <p class="feature-description">Создание веб-приложений, Telegram-ботов и автоматизация процессов с использованием современного Python</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">🧠</span>
+                <h3 class="feature-title">Машинное обучение</h3>
+                <p class="feature-description">Разработка нейросетей и проведение научных вычислений для решения сложных задач</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">🌐</span>
+                <h3 class="feature-title">Веб-технологии</h3>
+                <p class="feature-description">Современные веб-приложения с использованием актуальных фреймворков и технологий</p>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="about">
+            <h2 class="about-title">О проекте</h2>
+            <div class="about-content">
+                <p>На Python пишут веб-приложения и нейросети, проводят научные вычисления и автоматизируют процессы. Язык просто выучить, даже если вы никогда не программировали.</p>
+                <br>
+                <p>Здесь вы найдете примеры проектов: Telegram-боты, полноценные интернет-магазины и аналоги популярных социальных сетей. Все это создано для демонстрации возможностей современной разработки.</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="index.html">Главная</a>
+                <a href="privacy.html">Политика конфиденциальности</a>
+                <a href="mailto:mail@mishastar.ru">Контакты</a>
+            </div>
+            <div class="copyright">
+                © 2025 MishaStar. Все права защищены.
+            </div>
+        </footer>
     </div>
 </body>
 </html>
